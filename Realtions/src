@@ -1,0 +1,115 @@
+/*
+ * Program: This is a program where the user creates a set of numbers and 
+ * we compare the relation of the set from CMSC 207 concepts found in chapter 8 of the book.
+ * CMSC Concepts: Two main concepts are viewing if two sets are E & S relations. 
+ * Based on 8.1.
+ */
+
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main() {
+    // Variables
+    set<int> userSet;
+    set<int> userSet2;
+    char userLetter, userLetter2;
+    int num, num2;
+
+    // User is welcomed and informed about the program
+    cout << "========================================================================================================================" << endl; 
+    cout << " This program involves creating two sets and examining various relations between them based on concepts from CMSC207." << endl;
+    cout << "========================================================================================================================" << endl;
+    
+    // User creates the first set
+    cout << "Let's create our first set" << endl;
+    cout << "Add your 1st number: ";
+    cin >> num;
+    userSet.insert(num);
+    cout << "Would you like to add another number (y for yes & n for no): ";
+    cin >> userLetter;
+    
+    while (userLetter == 'y' || userLetter == 'Y') {
+        cout << "Enter your next number: ";
+        cin >> num;
+        userSet.insert(num);
+        cout << "Would you like to add another number (y for yes & n for no): ";
+        cin >> userLetter;
+    }
+
+    // Show user their first set
+    cout << "You just finished creating your 1st set!!! " << endl;
+    for (auto it = userSet.begin(); it != userSet.end(); ++it)
+        cout << *it << " ";
+    cout << endl;
+
+    // User creates the second set
+    cout << "Let's create our 2nd and last set" << endl;
+    cout << "Add your 1st number: ";
+    cin >> num2;
+    userSet2.insert(num2);
+    cout << "Would you like to add another number (y for yes & n for no): ";
+    cin >> userLetter2;
+
+    while (userLetter2 == 'y' || userLetter2 == 'Y') {
+        cout << "Enter your next number: ";
+        cin >> num2;
+        userSet2.insert(num2);
+        cout << "Would you like to add another number (y for yes & n for no): ";
+        cin >> userLetter2;
+    }
+
+    // Show user their second set
+    cout << "You just finished creating your 2nd set!!! " << endl;
+    for (auto it = userSet2.begin(); it != userSet2.end(); ++it)
+        cout << *it << " ";
+    cout << endl;
+
+    // Looking at the E of the sets
+    cout << "Let's look at the E relations of the two sets " << endl;
+    cout << "{ ";
+    for (auto it = userSet.begin(); it != userSet.end(); ++it)
+        cout << *it << " ";
+    cout << "} E { ";
+    for (auto it = userSet2.begin(); it != userSet2.end(); ++it)
+        cout << *it << " ";
+    cout << "}" << endl;
+
+    // Set size values for each set
+    int set1Size = userSet.size();
+    int user2Size = userSet2.size();
+
+    // Subtract the two sets
+    int eValueSets = set1Size - user2Size;
+
+    // If set after mod 2 has no remainder
+    if (eValueSets % 2 == 0) {
+        cout << "Statement is true" << endl;
+    } else {
+        cout << "Statement is false" << endl;
+    }
+
+    // Looking at the S of the sets
+    cout << "Let's look at the S relations of the two sets " << endl;
+    cout << "{ ";
+    for (auto it = userSet.begin(); it != userSet.end(); ++it)
+        cout << *it << " ";
+    cout << "} S { ";
+    for (auto it = userSet2.begin(); it != userSet2.end(); ++it)
+        cout << *it << " ";
+    cout << "}" << endl;
+
+    // Sets meet this condition to be S relation
+    if (set1Size >= user2Size) {
+        cout << "Statement is true" << endl;
+    } else {
+        cout << "Statement is false" << endl;
+    }
+
+    // End message
+    cout << "Program is over." << endl;
+    cout << "Thanks for your time :)" << endl;
+
+    return 0;
+}
