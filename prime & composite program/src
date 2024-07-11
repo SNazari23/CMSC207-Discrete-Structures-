@@ -1,0 +1,66 @@
+/* 
+ * Program: A program where user enter number and we tell 
+ * if is a prime and composite. 
+ * 
+ * CMSC207 Conepts: Composite and prime is a concepets disccued in chapter 4 number theory 
+ * section which prime and compiste are factor in number, people look into to make 
+ * better jedugment in numbers. Based on section 4.1 of chapter 4. TO code a a program which find compiste and prime 
+ * various algothms were used which can be viewed in the number theory perseptive such as 
+ * while loops & if staments. Based on section 4.10 of chapter 4 
+ *
+ */
+#include <iostream>
+#include <cmath>
+
+// Function for finding prime number (4.1)
+bool numPrime(int n) {
+    // Conditions numbers must meet to be prime
+    // if and else are algorithms found in 4.10
+    if (n <= 1) {
+        return false;
+    } else if (n <= 3) {
+        return true;
+    } else if (n % 2 == 0 || n % 3 == 0) {
+        return false;
+    }
+    int i = 5;
+    // while are algorithms found in 4.10
+    while (i * i <= n) {
+        if (n % i == 0 || n % (i + 2) == 0) {
+            return false;
+        }
+        i += 6;
+    }
+    return true;
+}
+
+int main() {
+    // Variables
+    int userNum;
+    char userChar = 'y';
+    
+    // Check the message (4.10)
+    while (userChar == 'y' || userChar == 'Y') {
+        // Get user number
+        std::cout << "Enter a number and we will check if it is prime or composite" << std::endl;
+        std::cout << "Number: ";
+        std::cin >> userNum;
+
+        // Check the message (4.10)
+        if (numPrime(userNum)) {
+            std::cout << userNum << " is prime." << std::endl;
+        } else {
+            std::cout << userNum << " is composite." << std::endl;
+        }
+        
+        // Ask user if they would like to try again
+        std::cout << "Would you like to try again? (y for yes & n for no): ";
+        std::cin >> userChar;
+    }
+
+    // End message
+    std::cout << "Program is over." << std::endl;
+    std::cout << "Thank you, thanks for your time :)" << std::endl;
+
+    return 0;
+}
