@@ -1,0 +1,110 @@
+/*
+ * Program: This is a program where the user enters a number and 
+ * it finds the factorial of that number.
+ *
+ * CMSC207 concepts: Factorial is a mathematical concept found in sequences, 
+ * counting arrangements being the same as sequences. Based on section 5.5  
+ * of chapter 5 of the book.
+ * While loops are also coding algorithms which are very similar to sequences,
+ * counting arrangements also being the same as sequences. Based on section 5.5  
+ * of chapter 5 of the book.
+ */
+
+#include <iostream>
+using namespace std;
+
+// Function to calculate factorial
+int factorial(int n) {
+    int i = 1;         // Counted value
+    int factorial = 1; // Factorial result
+
+    // Loop through each number of times number is counted
+    while (i <= n) {
+        factorial *= i; // Multiply factorial by current number i
+        i++;            // Increment loop counter
+    }
+
+    return factorial;
+}
+
+int main() {
+    // Variables
+    int userNum;
+    char userChar = 'y';
+
+    // Check the message (5.5)
+    while (userChar == 'y' || userChar == 'Y') {
+        // Get user number
+        cout << "Enter a number and we will find the factorial of the number " << endl;
+        cout << "Number: ";
+        cin >> userNum;
+
+        // Display factorial
+        cout << userNum << " factorial is " << factorial(userNum) << endl;
+
+        // Ask user if they would like to try again
+        cout << "Would you like to try again? (y for yes & n for no): ";
+        cin >> userChar;
+    }
+
+    // End message
+    cout << "Program is over." << endl;
+    cout << "Thanks for your time :)" << endl;
+
+    return 0;
+}
+/*
+ * Program: This is a program where the user enters a number and 
+ * it finds the factorial of that number.
+ *
+ * CMSC207 concepts: Factorial is a mathematical concept found in sequences, 
+ * counting arrangements being the same as sequences. Based on section 5.5  
+ * of chapter 5 of the book.
+ * While loops are also coding algorithms which are very similar to sequences,
+ * counting arrangements also being the same as sequences. Based on section 5.5  
+ * of chapter 5 of the book.
+ */
+
+#include <iostream>
+using namespace std;
+
+// Function to calculate factorial
+int factorial(int n) {
+    int i = 1;         // Counted value
+    int factorial = 1; // Factorial result
+
+    // Loop through each number of times number is counted
+    while (i <= n) {
+        factorial *= i; // Multiply factorial by current number i
+        i++;            // Increment loop counter
+    }
+
+    return factorial;
+}
+
+int main() {
+    // Variables
+    int userNum;
+    char userChar = 'y';
+
+    // Check the message (5.5)
+    while (userChar == 'y' || userChar == 'Y') {
+        // Get user number
+        cout << "Enter a number and we will find the factorial of the number " << endl;
+        cout << "Number: ";
+        cin >> userNum;
+
+        // Display factorial
+        cout << userNum << " factorial is " << factorial(userNum) << endl;
+
+        // Ask user if they would like to try again
+        cout << "Would you like to try again? (y for yes & n for no): ";
+        cin >> userChar;
+    }
+
+    // End message
+    cout << "Program is over." << endl;
+    cout << "Thanks for your time :)" << endl;
+
+    return 0;
+}
