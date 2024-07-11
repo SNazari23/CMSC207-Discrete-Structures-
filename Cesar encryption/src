@@ -1,0 +1,82 @@
+/*
+ * Program: Code where user enters a string literal and the program encrypts the user's string
+ * literal into a Caesar cipher code.
+ * 
+ * CMSC207 concept: 8.4 of the book discusses the idea of cryptology 
+ * and how useful it is to the world and in technology. One cryptology code is Caesar cipher.
+ */
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    // Class variables
+    string userMessage;
+    int userNum;
+    string encryptedText;
+    char encrypted;
+
+    string decryptedText;
+    char decrypted;
+
+    // Get user message and number
+    cout << "Enter a message and a number, and the program will display the message in Caesar cipher code:" << endl;
+    cout << "Message: ";
+    getline(cin, userMessage);
+    cout << "Number: ";
+    cin >> userNum;
+    cin.ignore(); // spacing
+
+    // Encrypt user message and number to Caesar code
+    // loop through the user message
+    for (int i = 0; i < userMessage.length(); i++) {
+        char literal = userMessage[i]; // assign message single literal to char for manipulation
+
+        // check if literal is a letter
+        if (isalpha(literal)) {
+            char base = isupper(literal) ? 'A' : 'a'; // check if it is uppercase or lowercase
+            encrypted = (char) (((literal - base + userNum) % 26) + base); // manipulation
+        } else {
+            encrypted = literal; // if not a letter, assign it directly
+        }
+
+        encryptedText += encrypted; // add to encryptedText
+    }
+
+    // display user Caesar code
+    cout << "Your Caesar code is: " << encryptedText << endl;
+
+    // decrypt user Caesar code message and number to normal
+    // get user Caesar code message and number
+    cout << "Now let's decrypt a Caesar code:" << endl;
+    cout << "Message: ";
+    cin.ignore(); // clear newline character left in buffer
+    getline(cin, userMessage);
+    cout << "Number: ";
+    cin >> userNum;
+
+    // loop through the user message
+    for (int i = 0; i < userMessage.length(); i++) { // assign message single literal to char for manipulation
+        char ch = userMessage[i]; // manipulation
+
+        // check if it is a letter
+        if (isalpha(ch)) {
+            char base = isupper(ch) ? 'A' : 'a'; // uppercase or lowercase
+            decrypted = (char) (((ch - base - userNum + 26) % 26) + base); // manipulation
+        } else {
+            decrypted = ch; // if not a letter, assign it directly
+        }
+
+        decryptedText += decrypted; // add to decryptedText
+    }
+
+    // Display user decrypted message
+    cout << "Your decrypted message is: " << decryptedText << endl;
+
+    // End message
+    cout << "Program is over." << endl;
+    cout << "Thanks for your time :)" << endl;
+
+    return 0;
+}
