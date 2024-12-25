@@ -3,7 +3,7 @@
  
  <h1 align="center"> CMSC207</h1>
 
-* Class: CMSC 207 was my Discrete Structures class . This class was class where I learned computer science applications and such as  relations, functions and algorithms, Naive Set Theory, combinatorics, logic, and mathematical induction.
-  
+* Class: CMSC 207 was my Discrete Structures class . This class was class where I learned computer science applications and such as  relations, functions and algorithms, Naive Set Theory, combinatorics, logic, and mathematical induction.  
 * Assignment: This file stores the code I made for this class to receive extra credit. The assignment was to make 4 programs that demonstrate knowledge taught in class to receive 10 points on the final exam. 
-
+*Language: C++ 🍊
+*IDE: Ecplsise 🌚
